@@ -29,7 +29,7 @@ export default defineConfig([
       },
     },
     rules: {
-      'prettier/prettier': 'error', // <- FALTAVA ISSO
+      'prettier/prettier': ['error', { endOfLine: 'auto' }],
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
     },
   },
