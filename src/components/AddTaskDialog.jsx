@@ -1,6 +1,6 @@
 import './AddTaskDialog.css'
 
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { CSSTransition } from 'react-transition-group'
 import { v4 } from 'uuid'
@@ -10,11 +10,20 @@ import Input from './Input'
 import TimeSelect from './TimeSelect'
 
 const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
-  const [title, setTitle] = useState()
-  const [time, setTime] = useState()
-  const [description, setDescription] = useState()
+  const [title, setTitle] = useState('')
+  const [time, setTime] = useState('morning')
+  const [description, setDescription] = useState('')
 
   const nodeRef = useRef()
+
+  useEffect(() => {
+    if (!isOpen) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setTitle('')
+      setTime('morning')
+      setDescription('')
+    }
+  }, [isOpen])
 
   const handleSaveClick = () => {
     handleSubmit({
@@ -49,7 +58,7 @@ const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
                 Inisra as informações abaixo
               </p>
 
-              <div className="flex w-84 flex-col space-y-4">
+              <div className="flex w-96 flex-col space-y-4">
                 <Input
                   label="Título"
                   id="title"
