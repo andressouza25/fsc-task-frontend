@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "git-commit-msg-linter": "^5.0.8",
+    "prop-types": "^15.8.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-transition-group": "^4.4.5",
