@@ -6,18 +6,18 @@ const TaskItem = ({ task, handleCheckboxClick, handleDeleteClick }) => {
     switch (task.status) {
       case 'done':
         return {
-          container: 'bg-[#00ADB5]/10 text-[#00ADB5]',
-          checkbox: 'bg-[#00ADB5] text-white',
+          container: 'bg-brand-primary/10 text-brand-primary',
+          checkbox: 'bg-brand-primary text-white',
         }
       case 'in_progress':
         return {
-          container: 'bg-[#FFAA04]/10 text-[#FFAA04]',
-          checkbox: 'bg-[#FFAA04] text-white',
+          container: 'bg-brand-process/10 text-brand-process',
+          checkbox: 'bg-brand-process text-white',
         }
       default:
         return {
-          container: 'bg-[#35383E]/10 text-[#35383E]',
-          checkbox: 'bg-[#35383E]/10 text-white',
+          container: 'bg-brand-dark-blue/10 text-brand-dark-blue',
+          checkbox: 'bg-brand-dark-blue/10 text-white',
         }
     }
   }
@@ -51,7 +51,7 @@ const TaskItem = ({ task, handleCheckboxClick, handleDeleteClick }) => {
       <div className="flex items-center gap-2">
         <Button variant="ghost">
           <TrashIcon
-            className="text-[#9A9C9F]"
+            className="text-brand-text-gray"
             onClick={() => handleDeleteClick(task.id)}
           />
         </Button>

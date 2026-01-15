@@ -60,7 +60,7 @@ const Tasks = () => {
       {/* { BOTOES} */}
       <div className="flex w-full justify-between">
         <div>
-          <span className="text-xs font-semibold text-[#00ADB5]">
+          <span className="text-brand-primary text-xs font-semibold">
             Minhas tarefas
           </span>
           <h2 className="text-xl font-semibold">Minhas Tarefas</h2>
