@@ -6,15 +6,22 @@ import { createPortal } from 'react-dom'
 import { CSSTransition } from 'react-transition-group'
 import { v4 } from 'uuid'
 
+import { LoaderIcon } from '../assets/icons'
 import Button from './Button'
 import Input from './Input'
 import TimeSelect from './TimeSelect'
 
-const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
+const AddTaskDialog = ({
+  isOpen,
+  handleClose,
+  onSubmitSuccess,
+  onSubmitError,
+}) => {
   const [title, setTitle] = useState('')
   const [time, setTime] = useState('morning')
   const [description, setDescription] = useState('')
   const [errors, setErrors] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
 
   const nodeRef = useRef()
 
@@ -27,9 +34,9 @@ const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
     }
   }, [isOpen])
 
-  const handleSaveClick = () => {
+  const handleSaveClick = async () => {
+    setIsLoading(true)
     const newErrors = []
-
     if (!title.trim()) {
       newErrors.push({
         inputName: 'title',
@@ -48,20 +55,21 @@ const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
         message: 'A descrição é obrigatória',
       })
     }
-
     setErrors(newErrors)
-
     if (newErrors.length > 0) {
-      return
+      return setIsLoading(false)
     }
-
-    handleSubmit({
-      id: v4(),
-      title,
-      time,
-      description,
-      status: 'not_started',
+    const task = { id: v4(), title, time, description, status: 'not_started' }
+    const response = await fetch('http://localhost:3000/tasks', {
+      method: 'POST',
+      body: JSON.stringify(task),
     })
+    if (!response.ok) {
+      setIsLoading(false)
+      return onSubmitError()
+    }
+    onSubmitSuccess(task)
+    setIsLoading(false)
     handleClose()
   }
 
@@ -131,7 +139,9 @@ const AddTaskDialog = ({ isOpen, handleClose, handleSubmit }) => {
                     size="large"
                     className="w-full"
                     onClick={handleSaveClick}
+                    disabled={isLoading}
                   >
+                    {isLoading && <LoaderIcon className="animate-spin" />}
                     Salvar
                   </Button>
                 </div>
