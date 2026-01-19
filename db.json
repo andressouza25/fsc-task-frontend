@@ -27,20 +27,6 @@
       "description": "Academia",
       "time": "afternoon",
       "status": "in_progress"
-    },
-    {
-      "id": "5",
-      "title": "Jogar",
-      "description": "Dota",
-      "time": "evening",
-      "status": "not_started"
-    },
-    {
-      "id": "6",
-      "title": "Descansar",
-      "description": "Dormir 8 horas",
-      "time": "evening",
-      "status": "not_started"
     }
   ]
 }
