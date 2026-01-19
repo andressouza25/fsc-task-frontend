@@ -20,7 +20,7 @@ const TaskDetailsPage = () => {
   const navigate = useNavigate()
   const {
     register,
-    formState: { erros, isSubmitting },
+    formState: { errors, isSubmitting },
     handleSubmit,
     reset,
   } = useForm()
@@ -123,7 +123,7 @@ const TaskDetailsPage = () => {
                     return true
                   },
                 })}
-                errorMessage={erros?.title?.message}
+                errorMessage={errors?.title?.message}
               />
             </div>
             <div>
@@ -131,7 +131,7 @@ const TaskDetailsPage = () => {
                 {...register('time', {
                   required: 'O horário é obrigatório.',
                 })}
-                errorMessage={erros?.time?.message}
+                errorMessage={errors?.time?.message}
               />
             </div>
             <div>
@@ -147,7 +147,7 @@ const TaskDetailsPage = () => {
                     return true
                   },
                 })}
-                errorMessage={erros?.description?.message}
+                errorMessage={errors?.description?.message}
               />
             </div>
           </div>
