@@ -41,13 +41,6 @@
       "description": "Dormir 8 horas",
       "time": "evening",
       "status": "not_started"
-    },
-    {
-      "id": "62d0db79-e73d-4ee3-bfc2-8259a3383eab",
-      "title": "academia",
-      "time": "morning",
-      "description": "teste",
-      "status": "not_started"
     }
   ]
 }
