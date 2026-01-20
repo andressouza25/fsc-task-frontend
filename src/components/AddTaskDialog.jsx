@@ -90,6 +90,7 @@ const AddTaskDialog = ({ isOpen, handleClose }) => {
                 <Input
                   id="title"
                   label="Título"
+                  placeholder="Qual sua tarefa?"
                   errorMessage={errors?.title?.message}
                   {...register('title', {
                     required: 'O título é obrigatório.',
