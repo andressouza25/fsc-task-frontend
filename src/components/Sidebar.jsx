@@ -3,7 +3,7 @@ import SidebarButton from './SidebarButton'
 
 const Sidebar = () => {
   return (
-    <div className="h-screen w-72 bg-white">
+    <div className="h-screen w-72 min-w-72 bg-white">
       <div className="space-y-4 px-8 py-6">
         <h1 className="text-brand-primary text-2xl font-semibold">
           Task Manager
@@ -15,11 +15,11 @@ const Sidebar = () => {
       </div>
 
       <div className="flex flex-col gap-2 p-2">
-        <SidebarButton color="unselected">
+        <SidebarButton href="/" color="unselected">
           <HomeIcon />
           Ínicio
         </SidebarButton>
-        <SidebarButton color="selected">
+        <SidebarButton href="/tasks" color="selected">
           <TasksIcon />
           Minhas Tarefas
         </SidebarButton>
