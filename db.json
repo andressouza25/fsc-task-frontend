@@ -6,13 +6,6 @@
       "description": "ler o livro de matematica",
       "time": "morning",
       "status": "done"
-    },
-    {
-      "id": "3",
-      "title": "Treinar",
-      "description": "Academia",
-      "time": "afternoon",
-      "status": "in_progress"
     }
   ]
 }
