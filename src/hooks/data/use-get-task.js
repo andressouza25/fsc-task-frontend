@@ -9,6 +9,7 @@ export const useGetTask = ({ taskId, onSuccess }) => {
       const { data: task } = await api.get(`/tasks/${taskId}`)
       return task
     },
+    enabled: !!taskId,
     onSuccess,
   })
 }

@@ -12,7 +12,7 @@ export const useUpdateTask = (taskId) => {
         description: newTask.description.trim(),
         time: newTask.time.trim(),
       })
-      queryClient.setQueryData('tasks', (oldTasks) => {
+      queryClient.setQueryData(['tasks'], (oldTasks) => {
         return oldTasks.map((oldTask) => {
           if (oldTask.id === taskId) {
             return updatedTask
