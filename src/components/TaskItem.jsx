@@ -60,8 +60,8 @@ const TaskItem = ({ task }) => {
         }
       default:
         return {
-          container: 'bg-brand-dark-blue/10 text-brand-dark-blue',
-          checkbox: 'bg-brand-dark-blue/10 text-white',
+          container: 'bg-brand-dark-blue/5 text-brand-dark-blue',
+          checkbox: 'bg-brand-dark-blue/5 text-white',
         }
     }
   }
