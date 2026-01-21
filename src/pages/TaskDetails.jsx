@@ -31,6 +31,13 @@ const TaskDetailsPage = () => {
       time: task?.time || '',
       description: task?.description || '',
     },
+    values: task
+      ? {
+          title: task.title,
+          time: task.time,
+          description: task.description,
+        }
+      : undefined,
   })
 
   const { mutate: updateTask, isPending: updateTaskIsLoading } =
