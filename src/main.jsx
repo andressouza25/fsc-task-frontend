@@ -7,7 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router'
 import { Toaster } from 'sonner'
 
 import HomePage from './pages/Home.jsx'
-import TaskDetailsPage from './pages/taskDetails.jsx'
+import TaskDetailsPage from './pages/TaskDetails.jsx'
 import TasksPage from './pages/Tasks.jsx'
 
 const queryClient = new QueryClient()
