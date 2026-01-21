@@ -1,19 +1,19 @@
-# 📋 FSC Task Manager
+# 📋 Gerenciador de tarefas
 
-Um gerenciador de tarefas moderno e responsivo construído com React, desenvolvido para ajudar na organização e gestão eficiente de suas atividades diárias.
+Um gerenciador de tarefas moderno e responsivo construído com React, criado para ajudar na organização e gestão eficiente de suas atividades diárias.
 
 ---
 
-## 📸 Screenshots
+
 
 ### Página Home - Dashboard
 
-![Home Page](./public/screenshots/home.png)
+<img width="1908" height="902" alt="image" src="https://github.com/user-attachments/assets/d884f664-368b-44d9-9113-d6189a969631" />
 _Visualização do dashboard com resumo das tarefas e estatísticas_
 
 ### Página de Detalhes da Tarefa
 
-![Task Details Page](./public/screenshots/task-details.png)
+<img width="1905" height="899" alt="image" src="https://github.com/user-attachments/assets/dcf9c354-c2f9-428d-a676-a5d732f14169" />
 _Página para editar e gerenciar detalhes de uma tarefa específica_
 
 ---
@@ -176,11 +176,7 @@ Este projeto está licenciado sob a licença MIT.
 
 ## 👤 Autor
 
-**André**  
-Desenvolvidor Full Stack
+**André Santos**  
+Desenvolvedor Full Stack
 
----
 
-## 🤝 Contribuindo
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.
