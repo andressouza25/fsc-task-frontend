@@ -1,4 +1,4 @@
-# 📋 FSC Task Manager
+# 📋 Gerenciador de tarefas
 
 Um gerenciador de tarefas moderno e responsivo construído com React, criado para ajudar na organização e gestão eficiente de suas atividades diárias.
 
