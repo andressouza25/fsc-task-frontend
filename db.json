@@ -12,14 +12,21 @@
       "title": "nova",
       "time": "afternoon",
       "description": "nova",
-      "status": "not_started"
+      "status": "in_progress"
     },
     {
       "id": "1d2f80f7-6bc5-4232-adaf-57329c7195c7",
       "title": "Manha",
       "time": "morning",
       "description": "Teste",
-      "status": "not_started"
+      "status": "done"
+    },
+    {
+      "id": "33a4ca3c-3d5b-4c64-b07b-5a60b490be3c",
+      "title": "Nova",
+      "time": "evening",
+      "description": "nova",
+      "status": "in_progress"
     }
   ]
 }

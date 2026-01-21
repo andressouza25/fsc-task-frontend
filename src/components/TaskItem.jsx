@@ -4,10 +4,13 @@ import { toast } from 'sonner'
 
 import { CheckIcon, DetailsIcon, LoaderIcon, TrashIcon } from '../assets/icons'
 import { useDeleteTask } from '../hooks/data/use-delete-task'
+import { useUpdateTask } from '../hooks/data/use-update-task'
 import Button from './Button'
 
-const TaskItem = ({ task, handleCheckboxClick }) => {
+const TaskItem = ({ task }) => {
   const { mutate: deleteTask, isPending } = useDeleteTask(task.id)
+
+  const { mutate } = useUpdateTask(task.id)
 
   const handleDeleteClick = async () => {
     deleteTask(undefined, {
@@ -18,6 +21,29 @@ const TaskItem = ({ task, handleCheckboxClick }) => {
         toast.error('Erro ao deletar tarefa!')
       },
     })
+  }
+
+  const getNewStatus = () => {
+    if (task.status === 'not_started') {
+      return 'in_progress'
+    }
+    if (task.status === 'in_progress') {
+      return 'done'
+    }
+    return 'not_started'
+  }
+
+  const handleCheckBoxClick = () => {
+    mutate(
+      { status: getNewStatus() },
+      {
+        onSuccess: () =>
+          toast.success('Status da tarefa atualizada com sucesso!'),
+        onError: () => {
+          'Erro ao atualizar status da tarefa. Por favor, tente novamente.'
+        },
+      }
+    )
   }
 
   const getStatusClasses = () => {
@@ -54,7 +80,7 @@ const TaskItem = ({ task, handleCheckboxClick }) => {
             type="checkbox"
             checked={task.status === 'done'}
             className="absolute h-full w-full cursor-pointer opacity-0"
-            onChange={() => handleCheckboxClick(task.id)}
+            onChange={handleCheckBoxClick}
           />
 
           {task.status === 'done' && <CheckIcon />}
