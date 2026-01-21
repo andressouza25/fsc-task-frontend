@@ -17,11 +17,6 @@ function Header({ subtitle, title }) {
       </div>
 
       <div className="flex items-center gap-3">
-        <Button color="ghost">
-          Limpar Tarefas
-          <TrashIcon />
-        </Button>
-
         <Button onClick={() => setAddTaskDialogIsOpen(true)}>
           Nova Tarefa
           <AddIcon />
